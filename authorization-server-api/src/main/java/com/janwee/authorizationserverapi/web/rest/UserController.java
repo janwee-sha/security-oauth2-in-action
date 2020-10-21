@@ -5,13 +5,14 @@ import com.janwee.authorizationserverapi.entity.web.res.UserRes;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@FeignClient(name = "authorization-server")
 @Api(tags = {"User Management API"})
 @RequestMapping("/users")
+@FeignClient("authorization-server")
 public interface UserController {
     @PostMapping("/register")
     @ApiOperation(value = "注册用户")

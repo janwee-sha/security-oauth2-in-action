@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -10,11 +10,18 @@
     </parent>
     <groupId>com.janwee</groupId>
     <artifactId>authorization-server</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>${project.version}</version>
     <name>authorization-server</name>
-    <description>Authorization Server for oauth2-in-action</description>
+    <description>Authorization Server for security-oauth2-in-action</description>
 
     <dependencies>
+        <!-- authorization-server-api -->
+        <dependency>
+            <groupId>com.janwee</groupId>
+            <artifactId>authorization-server-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- Spring Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -79,13 +86,6 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-        </dependency>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <!-- Swagger2 -->

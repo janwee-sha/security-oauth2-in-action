@@ -15,6 +15,7 @@ import java.io.Serializable;
 public class UserReq implements Serializable {
 
     private static final long serialVersionUID = -1336892060523913748L;
+
     @ApiModelProperty(value = "用户名", required = true)
     private String username;
 

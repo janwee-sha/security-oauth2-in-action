@@ -2,7 +2,7 @@ spring:
   profiles:
     include: mysql
   application:
-    name: auth-server
+    name: Authorization Server
   jpa:
     show-sql: true
     hibernate:

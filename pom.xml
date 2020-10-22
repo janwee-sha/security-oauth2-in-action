@@ -22,8 +22,8 @@
     </properties>
 
     <modules>
-        <module>./authorization-server</module>
-        <module>./authorization-server-api</module>
+        <module>./auth-server</module>
+        <module>./auth-server-api</module>
     </modules>
 
     <dependencies>

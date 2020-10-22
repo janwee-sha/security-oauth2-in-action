@@ -9,16 +9,16 @@
         <relativePath>..</relativePath>
     </parent>
     <groupId>com.janwee</groupId>
-    <artifactId>authorization-server</artifactId>
+    <artifactId>auth-server</artifactId>
     <version>${project.version}</version>
-    <name>authorization-server</name>
+    <name>auth-server</name>
     <description>Authorization Server for security-oauth2-in-action</description>
 
     <dependencies>
-        <!-- authorization-server-api -->
+        <!-- auth-server-api -->
         <dependency>
             <groupId>com.janwee</groupId>
-            <artifactId>authorization-server-api</artifactId>
+            <artifactId>auth-server-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

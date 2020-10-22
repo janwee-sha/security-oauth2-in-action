@@ -1,4 +1,4 @@
-package com.janwee.authorizationserver.configuration;
+package com.janwee.authorizationserver.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;

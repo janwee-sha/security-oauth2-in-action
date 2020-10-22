@@ -1,4 +1,4 @@
-package com.janwee.authorizationserver.configuration;
+package com.janwee.authorizationserver.config;
 
 import com.janwee.authorizationserver.aspect.UserPasswordEncoder;
 import org.springframework.context.annotation.Bean;

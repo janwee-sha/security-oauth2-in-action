@@ -12,7 +12,7 @@ import java.util.List;
 
 @Api(tags = {"User Management API"})
 @RequestMapping("/users")
-@FeignClient("authorization-server")
+@FeignClient("auth-server")
 public interface UserController {
     @PostMapping("/register")
     @ApiOperation(value = "注册用户")
@@ -21,6 +21,7 @@ public interface UserController {
     @PutMapping("/edit")
     @ApiOperation(value = "修改用户")
     UserRes update(@ApiParam("*用户请求实体") @RequestBody UserReq userReq) throws Exception;
+
     @GetMapping("/{username}")
     @ApiOperation(value = "查询用户")
     UserRes readByUsername(

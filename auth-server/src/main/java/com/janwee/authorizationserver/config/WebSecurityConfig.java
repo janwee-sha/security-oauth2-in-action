@@ -1,4 +1,4 @@
-package com.janwee.authorizationserver.configuration;
+package com.janwee.authorizationserver.config;
 
 import com.janwee.authorizationserver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

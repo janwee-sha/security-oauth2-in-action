@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS `janwee_security`;
-CREATE DATABASE `janwee_security` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+DROP DATABASE IF EXISTS `auth_server_db`;
+CREATE DATABASE `auth_server_db` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE `janwee_security`;
+USE `auth_server_db`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 

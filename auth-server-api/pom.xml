@@ -9,9 +9,9 @@
         <relativePath>..</relativePath>
     </parent>
     <groupId>com.janwee</groupId>
-    <artifactId>authorization-server-api</artifactId>
+    <artifactId>auth-server-api</artifactId>
     <version>${project.version}</version>
-    <name>authorization-server-api</name>
+    <name>auth-server-api</name>
     <description>Authorization Server API for security-oauth2-in-action</description>
 
     <dependencies>

@@ -1,4 +1,4 @@
-package com.janwee.authorizationserver.configuration;
+package com.janwee.authorizationserver.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,6 +23,9 @@ import javax.sql.DataSource;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig implements AuthorizationServerConfigurer {
+    private final static String KEY_PATH = "mykeypair.jks";
+    private final static String KEY_ALIAS = "mykeypair.jks";
+    private final static String KEY_PASS = "janwee";
     private DataSource dataSource;
     private AuthenticationManager authenticationManager;
     private UserDetailsService userDetailsService;
@@ -48,6 +51,7 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
         clientService.jdbc(dataSource);
     }
 
+
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
@@ -63,8 +67,8 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         KeyStoreKeyFactory keyStoreKeyFactory =
-                new KeyStoreKeyFactory(new ClassPathResource("mykeypair.jks"), "janwee".toCharArray());
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mykeypair.jks"));
+                new KeyStoreKeyFactory(new ClassPathResource(KEY_PATH), KEY_PASS.toCharArray());
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair(KEY_ALIAS));
         return converter;
     }
 

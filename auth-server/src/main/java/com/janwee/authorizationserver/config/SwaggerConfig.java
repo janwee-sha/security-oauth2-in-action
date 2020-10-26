@@ -41,7 +41,7 @@ public class SwaggerConfig {
                 .termsOfServiceUrl("https://github.com/janwee-sha")
                 .contact(new Contact("Jan-wee Sha", "https://github.com/janwee-sha", "janwee_sha@163.com"))
                 .license("Brief introduction of the project")
-                .licenseUrl("https://github.com/janwee-sha/java-projects/blob/master/janwee-security/README.md")
+                .licenseUrl("https://github.com/janwee-sha/security-oauth2-in-action/blob/main/README.md")
                 .version("1.0").build();
     }
 }

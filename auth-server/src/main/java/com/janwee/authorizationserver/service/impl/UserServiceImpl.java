@@ -16,18 +16,18 @@ import java.util.List;
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
+    private UserRepository userRepo;
     private UserAssembler userAssembler;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserAssembler userAssembler) {
-        this.userRepository = userRepository;
+    public UserServiceImpl(UserRepository userRepo, UserAssembler userAssembler) {
+        this.userRepo = userRepo;
         this.userAssembler = userAssembler;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findById(username).orElseThrow(() ->
+        return userRepo.findById(username).orElseThrow(() ->
                 new UsernameNotFoundException("User '" + username + "' not found"));
     }
 
@@ -41,11 +41,11 @@ public class UserServiceImpl implements UserService {
     }
 
     protected User save(User user) {
-        return userRepository.save(user);
+        return userRepo.save(user);
     }
 
     @Override
     public List<User> loadAll() {
-        return userRepository.findAll();
+        return userRepo.findAll();
     }
 }

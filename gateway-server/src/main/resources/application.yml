@@ -1,0 +1,16 @@
+server:
+  port: 30001
+spring:
+  application:
+    name: Gateway Server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: auth-server
+          uri: http://localhost:40001
+          predicates:
+            - Path=/authorization/**
+

@@ -11,6 +11,7 @@
     <groupId>com.janwee.security.oauth2</groupId>
     <artifactId>security-oauth2-in-action</artifactId>
     <version>1.0.0-RELEASE</version>
+    <packaging>pom</packaging>
     <name>oauth2-in-action-parent</name>
     <description>Parent Module for security-oauth2-in-action</description>
 
@@ -24,7 +25,6 @@
 
     <modules>
         <module>./auth-server</module>
-        <module>./auth-server-api</module>
         <module>./resource-server</module>
         <module>./gateway-server</module>
     </modules>
@@ -54,12 +54,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <!-- openfeign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

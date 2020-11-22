@@ -10,7 +10,11 @@ spring:
           enabled: true
       routes:
         - id: auth-server
-          uri: http://localhost:40001
+          uri: http://127.0.0.1:40001
           predicates:
             - Path=/authorization/**
+        - id: resource-server
+          uri: http://127.0.0.1:50001
+          predicates:
+            - Path=/resource/**
 

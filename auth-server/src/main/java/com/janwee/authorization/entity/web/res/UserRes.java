@@ -1,4 +1,4 @@
-package com.janwee.authorization.api.entity.web.res;
+package com.janwee.authorization.entity.web.res;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -14,14 +14,14 @@ public class UserPasswordEncoder {
     private PasswordEncoder passwordEncoder;
 
 
-    @Pointcut("execution(* com.janwee.authorization.web.rest.UserControllerImpl.register("
-            + "com.janwee.authorization.api.entity.web.req.UserReq)) && args(userReq)")
+    @Pointcut("execution(* com.janwee.authorization.web.rest.UserController.register("
+            + "com.janwee.authorization.entity.web.req.UserReq)) && args(userReq)")
     public void create(UserReq userReq) {
     }
 
 
-    @Pointcut("execution(* com.janwee.authorization.web.rest.UserControllerImpl.update(java.lang.String,"
-            + "com.janwee.authorization.api.entity.web.req.UserReq)) && args(username,userReq)")
+    @Pointcut("execution(* com.janwee.authorization.web.rest.UserController.update(java.lang.String,"
+            + "com.janwee.authorization.entity.web.req.UserReq)) && args(username,userReq)")
     public void update(String username, UserReq userReq) {
     }
 

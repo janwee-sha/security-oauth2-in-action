@@ -1,0 +1,5 @@
+com\janwee\resource\config\ResourceServerConfig.class
+com\janwee\resource\service\impl\HelloServiceImpl.class
+com\janwee\resource\service\HelloService.class
+com\janwee\resource\config\SwaggerConfig.class
+com\janwee\resource\LibraryServerApplication.class

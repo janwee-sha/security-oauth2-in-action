@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Janwee Security</title>
+</head>
+<body>
+<h1>Hello,<b th:text="${username}"></b>!</h1>
+<p>Janwee的Spring Security Demo项目</p>
+<form action="/logout" method="post">
+    <button type="submit">退出</button>
+</form>
+</body>
+</html>

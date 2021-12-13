@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    include: mysql
+  application:
+    name: Authorization Server
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    prefix: classpath:/static/
+    cache: false
+    mode: HTML5
+server:
+  port: 40001
+---
+spring:
+  profiles: mysql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.136.133:3306/auth_server_db?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: janwee
+    password: janwee

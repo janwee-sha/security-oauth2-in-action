@@ -25,16 +25,16 @@ public class UserService implements UserDetailsService {
                 new UsernameNotFoundException("User '" + username + "' not found"));
     }
 
-    public User register(User user) {
-        return save(user);
+    public void register(User user) {
+        save(user);
     }
 
-    public User changeUserInfo(User user) {
-        return save(user);
+    public void changeUserInfo(User user) {
+        save(user);
     }
 
-    protected User save(User user) {
-        return userRepo.save(user);
+    protected void save(User user) {
+        userRepo.save(user);
     }
 
     public List<User> users() {

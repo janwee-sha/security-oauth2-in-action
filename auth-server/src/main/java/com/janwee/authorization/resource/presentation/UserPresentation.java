@@ -24,6 +24,6 @@ public class UserPresentation implements Serializable {
     }
 
     public static UserPresentation fromUser(User user) {
-        return new UserPresentation(user.getUsername(), user.getPhonenumber());
+        return user == null ? null : new UserPresentation(user.getUsername(), user.getPhonenumber());
     }
 }

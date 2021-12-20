@@ -21,23 +21,19 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepo.findById(username).orElseThrow(() ->
+        return userRepo.userOfUsername(username).orElseThrow(() ->
                 new UsernameNotFoundException("User '" + username + "' not found"));
     }
 
     public void register(User user) {
-        save(user);
+        userRepo.addUser(user);
     }
 
     public void changeUserInfo(User user) {
-        save(user);
-    }
-
-    protected void save(User user) {
-        userRepo.save(user);
+        userRepo.updateUser(user);
     }
 
     public List<User> users() {
-        return userRepo.findAll();
+        return userRepo.users();
     }
 }

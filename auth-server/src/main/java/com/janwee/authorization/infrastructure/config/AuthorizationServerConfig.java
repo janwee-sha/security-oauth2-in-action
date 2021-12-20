@@ -20,7 +20,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 @Configuration
-@EnableAuthorizationServer
+//@EnableAuthorizationServer
 public class AuthorizationServerConfig implements AuthorizationServerConfigurer {
     private final static String KEY_PATH = "mykeypair.jks";
     private final static String KEY_ALIAS = "mykeypair.jks";
@@ -29,7 +29,7 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
     private UserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
+//    @Autowired
     public AuthorizationServerConfig(@Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager,
                                      UserService userService, PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;

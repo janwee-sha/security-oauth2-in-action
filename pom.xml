@@ -21,6 +21,7 @@
         <swagger.version>2.7.0</swagger.version>
         <project.version>1.0.0-RELEASE</project.version>
         <druid.version>1.1.22</druid.version>
+        <mabatis.version>2.2.0</mabatis.version>
     </properties>
 
     <modules>
@@ -75,6 +76,13 @@
                 <version>${druid.version}</version>
             </dependency>
 
+            <!-- MyBatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
             <!-- Swagger2 -->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -87,6 +95,14 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- JUnit5 -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.7.0</version>
+                <!--<scope>test</scope>-->
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    include: mysql
+  application:
+    name: Authorization Server
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    prefix: classpath:/static/
+    cache: false
+    mode: HTML5
+server:
+  port: 40001
+mybatis:
+  mapper-locations: classpath:mybatismapper/*.xml

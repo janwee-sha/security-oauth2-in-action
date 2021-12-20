@@ -19,32 +19,39 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
+import javax.sql.DataSource;
+
 @Configuration
-//@EnableAuthorizationServer
+@EnableAuthorizationServer
 public class AuthorizationServerConfig implements AuthorizationServerConfigurer {
     private final static String KEY_PATH = "mykeypair.jks";
     private final static String KEY_ALIAS = "mykeypair.jks";
     private final static String KEY_PASS = "janwee";
-    private AuthenticationManager authenticationManager;
-    private UserDetailsService userDetailsService;
-    private PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+    private final UserDetailsService userDetailsService;
+    private final PasswordEncoder passwordEncoder;
+    private final DataSource dataSource;
 
-//    @Autowired
+    @Autowired
     public AuthorizationServerConfig(@Qualifier("authenticationManagerBean") AuthenticationManager authenticationManager,
-                                     UserService userService, PasswordEncoder passwordEncoder) {
+                                     UserService userService, PasswordEncoder passwordEncoder, DataSource dataSource) {
         this.authenticationManager = authenticationManager;
         this.userDetailsService = userService;
         this.passwordEncoder = passwordEncoder;
+        this.dataSource = dataSource;
     }
 
+    //授权服务器安全配置
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.passwordEncoder(passwordEncoder).tokenKeyAccess("permitAll()");
     }
 
+    //注册客户
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.jdbc(dataSource);
+        //没有配置客户端的持久化数据，使用内存数据源
+        //clients.jdbc(dataSource);
         clients.inMemory()
                 .withClient("janwee")
                 .authorizedGrantTypes("refresh_token", "password")
@@ -54,6 +61,7 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
     }
 
 
+    //配置授权服务器使用JwtTokenStore
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
@@ -65,6 +73,7 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
 
     }
 
+    //使用非对称密钥对中的私钥（Private Key）来签署JWT令牌
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

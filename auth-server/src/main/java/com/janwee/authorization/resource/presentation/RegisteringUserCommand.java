@@ -15,6 +15,18 @@ public class RegisteringUserCommand implements Serializable {
     @ApiModelProperty(value = "电话号码")
     private String phoneNumber;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     public User toUser() {
         return new User(username, password, phoneNumber);
     }
